@@ -1,0 +1,15 @@
+<% if @password_error %>
+	<p style='color: red;'>Invalid password</p>
+<% end %>
+
+<p>Register:</p>
+<form action='/account' method='POST'>
+	<input name='fname' placeholder='first name'>
+	<input name='lname' placeholder='last name'>
+	<input name='handle' placeholder='@twitter_handle'>
+	<input name='email' placeholder='email'>
+	<input name='password' type='password' placeholder='password'>
+	<input name='password_confirm' type='password' placeholder='password'>
+	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+	<button>Create</button>
+</form>

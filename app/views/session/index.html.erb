@@ -1,0 +1,12 @@
+<% if @error %>
+	<p style='color: red;'>Invalid email/password</p>
+<% end %>
+
+<form action='/session' method='POST'>
+	<input name='email' placeholder='email'>
+	<input name='password' type='password' placeholder='password'>
+	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+	<button>Login</button>
+</form>
+
+<a href='/account/new'>Create Account</a>
