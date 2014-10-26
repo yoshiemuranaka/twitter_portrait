@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 			# MY TWITTER CLIENT VARIABLE NIL :( AFTER CREATING CLIENT, STORING TWEETS THEN REDIRECTING TO SIGN-IN PAGE
 
-			twitterAPI = @client.user_timeline(user.handle, :count => 20)
+			twitterAPI = $twitter.user_timeline(user.handle, :count => 20)
 
 			twitterAPI.each do |tweet|
 				
