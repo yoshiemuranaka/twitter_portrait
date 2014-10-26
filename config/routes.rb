@@ -3,9 +3,11 @@ Rails.application.routes.draw do
   root 'session#index'
 
   post '/session' => 'session#create'
+  delete '/session' => 'session#destroy'
   get '/account' => 'account#show'
   post '/account' => 'account#create'
   get '/account/new' => 'account#new'
+  get '/user' => 'user#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
