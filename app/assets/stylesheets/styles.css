@@ -1,0 +1,21 @@
+h2{
+	font-family: Courier;
+	text-align: center;
+}
+
+div#portrait{
+	margin: 0 auto;
+}
+
+p{
+	text-align: center
+}
+
+form{
+	text-align: center;
+}
+
+a{
+	text-decoration: none;
+	color: black
+}
