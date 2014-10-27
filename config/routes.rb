@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   
   get '/account/new' => 'account#new'
   get '/account' => 'account#show'
-  
-  post '/users' => 'users#create'
+  post '/account' => 'account#create'
   
   get '/users/tweets' => 'tweets#show'
 

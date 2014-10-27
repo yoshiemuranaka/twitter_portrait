@@ -1,9 +1,17 @@
 <% if @password_error %>
-	<p style='color: red;'>Invalid password</p>
+	<p style='color: red;'>Passwords Don't Match</p>
+<% end %>
+
+<% if @missing_fields_error %>
+	<p style='color: red;'>Please Enter All Fields</p>
+<% end %>
+
+<% if @email_taken_error %>
+	<p style='color: red;'>Email Taken</p>
 <% end %>
 
 <p>Register:</p>
-<form action='/users' method='POST'>
+<form action='/account' method='POST'>
 	<input name='fname' placeholder='first name'>
 	<input name='lname' placeholder='last name'>
 	<input name='handle' placeholder='@twitter_handle'>
