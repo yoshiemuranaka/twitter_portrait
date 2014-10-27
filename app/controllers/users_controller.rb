@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 					value +=5
 				end
 
-				#ADDING COLOR CODE
+				#ADDING COLOR CODE -- NEEDS WORK
 				time = tweet.created_at
 				
 				if time.hour == 0 && time.hour < 8
@@ -43,7 +43,7 @@ class UsersController < ApplicationController
 				elsif time.hour == 8 && time.hour < 16
 					color_code = 1
 				else
-					color_code = 3
+					color_code = 2
 				end
 
 				# CREATING TWEET OBJECT

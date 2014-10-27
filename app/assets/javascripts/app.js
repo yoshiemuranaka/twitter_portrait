@@ -1,6 +1,6 @@
 var size = 600
 
-var color = ["#156b87", "#876315", "#543510", "#872815"]
+var color = ["#89B5C7", "#C78A03", "#C77539"]
 
 d3.json('http://localhost:3000/users/tweets', function(data){
 
@@ -15,13 +15,13 @@ d3.json('http://localhost:3000/users/tweets', function(data){
 
 	svg.selectAll('circle')
 			.data(pack.nodes(data).slice(1))
-		.enter.append('circle')
+		.enter().append('circle')
 			.attr('r', 0)
 		.transition().duration(2000).ease('elastic')
 			.attr('cx', function(d) { return d.x })
 			.attr('cy', function(d) { return d.y })
 			.attr('r', function(d) { return d.r })
-			.attr('fill', function(d) { return color[d.color_code] })
+			.style('fill', function(d) { return color[d.color_code] })
 
 })
 

@@ -4,7 +4,12 @@ class TweetsController < ApplicationController
 		user = User.find(session[:user_id])
 		tweets = user.tweets
 
-		render :json => tweets
+		data={
+			name: 'tweets',
+			children: tweets
+		}
+
+		render :json => data.to_json
 	end
 
 end
