@@ -1,4 +1,3 @@
-<p><%= @user.fname %> <%= @user.lname %></p>
 <form method="POST" action="/session">
 	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
 	<input name="_method" value="DELETE" type="hidden">
@@ -7,6 +6,10 @@
 
 <div id='portrait'></div>
 
-<div id='info'></div>
+<div id='info'>
+<h4><%= @user.fname %> <%= @user.lname %></h4>
+<p id='tweet'></p>
+<p id='created_at'></p>
+</div>
 
 

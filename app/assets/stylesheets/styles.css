@@ -3,11 +3,17 @@ h2{
 	text-align: center;
 }
 
-div#portrait{
+h4{
+	font-family: Courier;
+	text-align: center;
+}
+
+div{
 	margin: 0 auto;
 }
 
 p{
+	font-family: Courier;
 	text-align: center
 }
 
@@ -23,4 +29,13 @@ a{
 svg{
 	display: block;
 	margin: auto;
+}
+
+.text-hover{
+	opacity: .5
+}
+
+.selected{
+	stroke: hotpink;
+	stroke-width: 5px;
 }
