@@ -16,7 +16,7 @@ class UsersController < ApplicationController
 				password: params[:password]
 				)
 
-			# MY TWITTER CLIENT VARIABLE NIL :( AFTER CREATING CLIENT, STORING TWEETS THEN REDIRECTING TO SIGN-IN PAGE
+			# AFTER CREATING CLIENT, TRYING TO STORE NEW CLIENT TWEETS THEN REDIRECTING TO SIGN-IN PAGE
 
 			twitterAPI = $twitter.user_timeline(user.handle, :count => 20)
 
@@ -31,13 +31,13 @@ class UsersController < ApplicationController
 				end
 
 				# ADDING VALUE FOR LINKS
-				if text.include?('http')
+				if tweet.text.include?('http')
 					value +=5
 				end
 
-				time = Time.new(text.created_at)
-
 				#ADDING COLOR CODE
+				time = tweet.created_at
+				
 				if time.hour == 0 && time.hour < 8
 					color_code = 0
 				elsif time.hour == 8 && time.hour < 16
