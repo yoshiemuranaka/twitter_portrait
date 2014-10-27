@@ -1,7 +1,6 @@
 var size = 400
 
-var color = ["#89B5C7", "#C78A03", "#C77539"]
-
+var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
 
 //D3 AJAX
 d3.json('http://localhost:3000/users/tweets', function(data){
@@ -39,11 +38,17 @@ function showInfo(d){
 	d3.selectAll('circle').classed('selected', false)
 	d3.select(this).classed('selected', true)
 
-	d3.select('#tweet')
-		.text(d.text)
-		
-	d3.select('#created_at')
-		.text(d.tweet_created_at)
+//maybe try text transitions with jquery ui instead of d3
+	$('#tweet').html(d.text)
+	$('#created_at').html(d.tweet_created_at)
+
+	// d3.select('#tweet')
+	// 	.transition()
+	// 	.text(d.text)
+	
+	// d3.select('#created_at')
+	// 	.transition()
+	// 	.text(d.tweet_created_at)
 }
 
 
@@ -56,7 +61,6 @@ function hoverFalse(){
 	d3.select(this).classed('text-hover', false)
 }
 
-
 function shuffleSelectTweet(){
 	circles = d3.selectAll('circle')[0]
 	circle = d3.shuffle(circles)[0]
@@ -64,11 +68,10 @@ function shuffleSelectTweet(){
 }
 
 //INTERVAL SELECTION OF TWEETS
-setInterval(function() {
+var timer = setInterval(function() {
 	circle = shuffleSelectTweet()
 	circle.__onclick()
 }, 5000);
-
 
 
 d3.select(self.frameElement).style('height', size)
