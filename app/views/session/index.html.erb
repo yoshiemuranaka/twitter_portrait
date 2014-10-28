@@ -2,15 +2,6 @@
 	<p class='error'>Invalid email/password</p>
 <% end %>
 
-<form action='/session' method='POST'>
-	<input name='email' placeholder='email'>
-	<input name='password' type='password' placeholder='password'>
-	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-	<button>Login</button>
-</form>
-
-<a href='/account/new'><p>Create Account</p></a>
-
 <div id="popularCelebs" class="carousel slide" data-ride="carousel" data-interval="false">
   <!-- Indicators -->
   <ol class="carousel-indicators">
@@ -40,4 +31,14 @@
 
 </div>
 
-<div id='info'>
+<div id='userSettings'>
+<form action='/session' method='POST'>
+	<input name='email' placeholder='email'>
+	<input name='password' type='password' placeholder='password'>
+	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+	<button>Login</button>
+</form>
+
+<a href='/account/new'><p>Create Account</p></a>
+</div>
+

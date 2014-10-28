@@ -5,7 +5,17 @@ var size = 400
 var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
 
 //D3 AJAX
-d3.json('http://localhost:3000/users/tweets', function(data){
+$.ajax({
+url: '/users/tweets',
+type: 'GET',
+dataType: 'json'
+}).done(function(data){
+	renderD3(data);
+
+});
+
+function renderD3(data){
+// d3.json('http://localhost:3000/users/tweets', function(data){
 
 	var svg=d3.select('div#portrait').append('svg')
 		.attr('width', size)
@@ -33,7 +43,8 @@ d3.json('http://localhost:3000/users/tweets', function(data){
 		.on('mouseout', hoverFalse)
 
 
-})//END AJAX
+// })//END AJAX
+};
 
 //SHOW TWEET INFO ON CLICK
 function showInfo(d){
