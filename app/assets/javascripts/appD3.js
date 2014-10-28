@@ -11,10 +11,12 @@ type: 'GET',
 dataType: 'json'
 }).done(function(data){
 	renderD3(data);
+	console.log("ajax complete")
 
 });
 
 function renderD3(data){
+	console.log("d3 render started")
 // d3.json('http://localhost:3000/users/tweets', function(data){
 
 	var svg=d3.select('div#portrait').append('svg')
