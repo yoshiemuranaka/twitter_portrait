@@ -29,8 +29,8 @@ d3.json('http://localhost:3000/celebs/1/tweets', function(data){
 			.style('fill', function(d) { return color[d.color_code] })
 
 	d3.selectAll('circle').on('click', showInfo)
-		.on('mouseover', hoverTrue)
-		.on('mouseout', hoverFalse)
+		// .on('mouseover', hoverTrue)
+		// .on('mouseout', hoverFalse)
 
 
 })//END AJAX
@@ -41,9 +41,15 @@ function showInfo(d){
 	d3.select(this).classed('selected', true)
 
 	$('#tweet').html(d.text)
-	$('#created_at').html(d.tweet_created_at)
-
 }
+
+// function hoverTrue(){
+// 	d3.select(this).classed('text-hover', true)
+// }
+
+// function hoverFalse(){
+// 	d3.select(this).classed('text-hover', false)
+// }
 
 
 //MOUSEOVER MOUSEOUT FUNCTIONS

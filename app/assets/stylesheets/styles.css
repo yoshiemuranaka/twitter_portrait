@@ -6,15 +6,17 @@ h2{
 h4{
 	font-family: Courier;
 	text-align: center;
+	color: black
 }
 
-div{
-	margin: 0 auto;
+div#info{
+	margin-bottom:50px;
 }
 
 p{
 	font-family: Courier;
-	text-align: center
+	text-align: center;
+	color:black;
 }
 
 form{
@@ -34,6 +36,10 @@ svg{
 button{
 	text-align: center;
 	margin: auto;
+}
+
+p#tweet{
+	padding: 0 80px;
 }
 
 .text-hover{
@@ -56,14 +62,31 @@ a:hover{
 	text-decoration: none;
 }
 
-li.carousel-indicators{
-	color:black;
+.carousel-indicators li{
+	background-color: black;
+	opacity: .5;
 }
 
-.carousel-caption{ 
-	text-align: center;
-	color:black; 	
-	}
+.carousel-indicators .active{
+	background-color: black;
+	opacity: 100
+}
 
+.carousel{
+	margin-bottom: 0
+}
+
+ol.carousel-indicators{
+	margin:0;
+}
+
+.carousel-caption.header{
+	padding:0;
+	top: 0;
+}
+
+.carousel-caption{
+	padding: 0;
+}
 
 
