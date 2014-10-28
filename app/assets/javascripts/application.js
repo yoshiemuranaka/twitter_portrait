@@ -18,7 +18,8 @@
 //= require bootstrap.min
 //= require d3.min
 //= require appD3
-//= require appJQuery
+//= require celebD3
+// require appJQuery
 
 
 

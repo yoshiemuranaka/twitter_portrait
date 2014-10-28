@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
 	def update
 		user = User.find(session[:user_id])
-
-		binding.pry
-
+		user.update(params['user_params'])
+		
+		redirect_to '/account'
 	end
 
 end

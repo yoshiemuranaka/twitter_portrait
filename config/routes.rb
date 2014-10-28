@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   post '/account' => 'account#create'
   
   get '/users/tweets' => 'tweets#show'
+  get '/celebs/:id/tweets' => 'celeb_tweets#show'
+  post '/celebs/:id/tweets' => 'celeb_tweets#create'
 
   post '/users' => 'users#update'
 

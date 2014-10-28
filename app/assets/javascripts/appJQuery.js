@@ -1,4 +1,4 @@
-window.onload = function() {
+$(function() {
 
 	$('button#updateUserInfo').on('click', function(){
 
@@ -6,8 +6,8 @@ window.onload = function() {
 		var lname = $("input[name='lname']").val()
 		var handle = $("input[name='handle']").val()
 
-		$.post('/users', body: {fname: fname, lname: lname, handle: handle})
+		$.post('/users', {user_params: {fname: fname, lname: lname, handle: handle} })
 
 	})
 
-}
+});
