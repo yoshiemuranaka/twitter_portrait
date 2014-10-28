@@ -1,13 +1,18 @@
 $(function() {
-	console.log("page loaded")
-
+	
 	var size = 400
 
 	var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
 
-	//D3 AJAX
-	d3.json('http://localhost:3000/celebs/1/tweets', function(data){
-
+	$.ajax({
+	url: '/celebs/1/tweets',
+	type: 'GET',
+	dataType: 'json'
+	}).done(function(data){
+		renderD3(data);
+	});
+	
+function renderD3(data){
 		var svg = d3.select('div#rooneyPortrait').append('svg')
 			.attr('width', size)
 			.attr('height', size)
@@ -30,11 +35,7 @@ $(function() {
 				.style('fill', function(d) { return color[d.color_code] })
 
 		d3.selectAll('circle').on('click', showInfo)
-			// .on('mouseover', hoverTrue)
-			// .on('mouseout', hoverFalse)
-
-
-	})//END AJAX
+}
 
 	//SHOW TWEET INFO ON CLICK
 	function showInfo(d){
@@ -43,17 +44,6 @@ $(function() {
 
 		$('#tweet').html(d.text)
 	}
-
-	// function hoverTrue(){
-	// 	d3.select(this).classed('text-hover', true)
-	// }
-
-	// function hoverFalse(){
-	// 	d3.select(this).classed('text-hover', false)
-	// }
-
-
-	//MOUSEOVER MOUSEOUT FUNCTIONS
 
 	d3.select(self.frameElement).style('height', size)
 

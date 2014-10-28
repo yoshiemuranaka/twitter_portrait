@@ -10,14 +10,10 @@ $(function() {
 	type: 'GET',
 	dataType: 'json'
 	}).done(function(data){
-		console.log(data)
-		console.log("ajax complete")
 		renderD3(data);
 	});
 
 	function renderD3(data){
-		console.log("d3 render started")
-	// d3.json('http://localhost:3000/users/tweets', function(data){
 
 		var svg=d3.select('div#portrait').append('svg')
 			.attr('width', size)
@@ -43,9 +39,6 @@ $(function() {
 		d3.selectAll('circle').on('click', showInfo)
 			.on('mouseover', hoverTrue)
 			.on('mouseout', hoverFalse)
-
-
-	// })//END AJAX
 	};
 
 	//SHOW TWEET INFO ON CLICK
