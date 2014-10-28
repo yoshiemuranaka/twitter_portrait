@@ -1,13 +1,17 @@
 <% if @password_error %>
-	<p style='color: red;'>Passwords Don't Match</p>
+	<p class='error'>passwords don't match</p>
 <% end %>
 
 <% if @missing_fields_error %>
-	<p style='color: red;'>Please Enter All Fields</p>
+	<p class='error'>please enter all fields</p>
 <% end %>
 
 <% if @email_taken_error %>
-	<p style='color: red;'>Email Taken</p>
+	<p class='error'>email has already been taken</p>
+<% end %>
+
+<% if @password_length_error %>
+	<p class='error'>password is too short. min 6 characters</p>
 <% end %>
 
 <p>Register:</p>

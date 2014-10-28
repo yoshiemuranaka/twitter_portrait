@@ -39,3 +39,9 @@ svg{
 	stroke: hotpink;
 	stroke-width: 5px;
 }
+
+.error{
+	color: red;
+	font-style: italic;
+	font-size: 12px;
+}

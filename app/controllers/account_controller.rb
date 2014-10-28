@@ -67,9 +67,11 @@ class AccountController < ApplicationController
 				
 			else
 
-				# I NEED TO FILTER ERRORS
-					if user.errors.messages == "has already been taken"
+					if user.errors.messages == {:email=>["has already been taken"]}
 						@email_taken_error = true
+						render :new
+					elsif user.errors.messages == {:password=>["is too short (minimum is 6 characters)"]}
+						@password_length_error = true
 						render :new
 					else 
 						@missing_fields_error = true
