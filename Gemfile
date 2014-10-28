@@ -30,6 +30,7 @@ gem 'spring',        group: :development
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'twitter'
+gem 'rails_12factor'
 
 # Use unicorn as the app server
 # gem 'unicorn'

@@ -56,6 +56,14 @@ a:hover{
 	text-decoration: none;
 }
 
-.carousel-indicators{
+li.carousel-indicators{
 	color:black;
 }
+
+.carousel-caption{ 
+	text-align: center;
+	color:black; 	
+	}
+
+
+
