@@ -35,6 +35,8 @@ function renderD3(data){
 				.style('fill', function(d) { return color[d.color_code] })
 
 		d3.selectAll('circle').on('click', showInfo)
+			.on('mouseover', hoverTrue)
+			.on('mouseout', hoverFalse)
 }
 
 	//SHOW TWEET INFO ON CLICK
@@ -43,7 +45,29 @@ function renderD3(data){
 		d3.select(this).classed('selected', true)
 
 		$('#tweet').html(d.text)
+		$('#created_at').html(d.tweet_created_at)
+
 	}
+
+	function hoverTrue(){
+		d3.select(this).classed('text-hover', true)
+	}
+
+	function hoverFalse(){
+		d3.select(this).classed('text-hover', false)
+	}
+
+	function shuffleSelectTweet(){
+		circles = d3.selectAll('circle')[0]
+		circle = d3.shuffle(circles)[0]
+		return circle
+	}
+
+	//INTERVAL SELECTION OF TWEETS
+	var timer = setInterval(function() {
+		circle = shuffleSelectTweet()
+		circle.__onclick()
+	}, 5000);
 
 	d3.select(self.frameElement).style('height', size)
 

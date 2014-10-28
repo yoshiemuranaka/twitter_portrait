@@ -41,45 +41,26 @@ $(function() {
 			.on('mouseout', hoverFalse)
 	};
 
-	//SHOW TWEET INFO ON CLICK
-	function showInfo(d){
-		d3.selectAll('circle').classed('selected', false)
-		d3.select(this).classed('selected', true)
-
-	//maybe try text transitions with jquery ui instead of d3
-		$('#tweet').html(d.text)
-		$('#created_at').html(d.tweet_created_at)
-
-		// d3.select('#tweet')
-		// 	.transition()
-		// 	.text(d.text)
-		
-		// d3.select('#created_at')
-		// 	.transition()
-		// 	.text(d.tweet_created_at)
-	}
-
-
 	//MOUSEOVER MOUSEOUT FUNCTIONS
-	function hoverTrue(){
-		d3.select(this).classed('text-hover', true)
-	}
+	// function hoverTrue(){
+	// 	d3.select(this).classed('text-hover', true)
+	// }
 
-	function hoverFalse(){
-		d3.select(this).classed('text-hover', false)
-	}
+	// function hoverFalse(){
+	// 	d3.select(this).classed('text-hover', false)
+	// }
 
-	function shuffleSelectTweet(){
-		circles = d3.selectAll('circle')[0]
-		circle = d3.shuffle(circles)[0]
-		return circle
-	}
+	// function shuffleSelectTweet(){
+	// 	circles = d3.selectAll('circle')[0]
+	// 	circle = d3.shuffle(circles)[0]
+	// 	return circle
+	// }
 
-	//INTERVAL SELECTION OF TWEETS
-	var timer = setInterval(function() {
-		circle = shuffleSelectTweet()
-		circle.__onclick()
-	}, 5000);
+	// //INTERVAL SELECTION OF TWEETS
+	// var timer = setInterval(function() {
+	// 	circle = shuffleSelectTweet()
+	// 	circle.__onclick()
+	// }, 5000);
 
 
 	d3.select(self.frameElement).style('height', size)
