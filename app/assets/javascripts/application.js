@@ -15,7 +15,10 @@
 //= require turbolinks
 // require_tree .
 
+//= require bootstrap.min
 //= require d3.min
-//= require app
+//= require appD3
+//= require appJQuery
+
 
 

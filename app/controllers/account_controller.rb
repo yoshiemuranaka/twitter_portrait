@@ -24,14 +24,13 @@ class AccountController < ApplicationController
 			user = User.new(
 				fname: params[:fname],
 				lname: params[:lname],
-				handle: params[:handle],
+				handle: params[:handle].downcase,
 				email: params[:email],
 				password: params[:password]
 				)
 
 			if user.valid?
 				user.save
-
 				#IF USER IS VALID, WILL AJAX TWITTER API AND STORE USER'S TWEETS
 				twitterAPI = $twitter.user_timeline(user.handle, :count => 200)
 

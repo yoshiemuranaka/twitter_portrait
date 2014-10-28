@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   
   get '/users/tweets' => 'tweets#show'
 
+  post '/users' => 'users#update'
+
 end
