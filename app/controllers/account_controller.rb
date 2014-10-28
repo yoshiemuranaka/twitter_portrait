@@ -54,9 +54,10 @@ class AccountController < ApplicationController
 					
 					# CREATING TWEET OBJECT
 					time = tweet.created_at
+
 					Tweet.create(
 						user_id: user.id,
-						tweet_created_at: tweet.created_at,
+						tweet_created_at: time.strftime("%Y-%m-%d %H:%M:%S"),
 						text: tweet.text,
 						value: value, 
 						color_code: time.hour
@@ -69,6 +70,9 @@ class AccountController < ApplicationController
 
 					if user.errors.messages == {:email=>["has already been taken"]}
 						@email_taken_error = true
+						render :new
+					elsif user.errors.messages == {:handle=>["has already been taken"]}
+						@handle_taken_error = true
 						render :new
 					elsif user.errors.messages == {:password=>["is too short (minimum is 6 characters)"]}
 						@password_length_error = true

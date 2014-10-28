@@ -7,7 +7,11 @@
 <% end %>
 
 <% if @email_taken_error %>
-	<p class='error'>email has already been taken</p>
+	<p class='error'>email already registered</p>
+<% end %>
+
+<% if @handle_taken_error %>
+	<p class='error'>handle already registered</p>
 <% end %>
 
 <% if @password_length_error %>
