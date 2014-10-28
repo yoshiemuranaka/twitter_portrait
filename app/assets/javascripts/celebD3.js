@@ -1,60 +1,61 @@
 $(function() {
+	console.log("page loaded")
 
-var size = 400
+	var size = 400
 
-var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
+	var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
 
-//D3 AJAX
-d3.json('http://localhost:3000/celebs/1/tweets', function(data){
+	//D3 AJAX
+	d3.json('http://localhost:3000/celebs/1/tweets', function(data){
 
-	var svg=d3.select('div#rooneyPortrait').append('svg')
-		.attr('width', size)
-		.attr('height', size)
+		var svg = d3.select('div#rooneyPortrait').append('svg')
+			.attr('width', size)
+			.attr('height', size)
 
-	//DECLARING LAYOUT TYPE
-	var pack = d3.layout.pack()
-		.size([size, size])
-		.sort(d3.descending)
-		.padding(2)
+		//DECLARING LAYOUT TYPE
+		var pack = d3.layout.pack()
+			.size([size, size])
+			.sort(d3.descending)
+			.padding(2)
 
-	//APPENDING CIRCLE FOR EACH DATA CHILD
-	svg.selectAll('circle')
-			.data(pack.nodes(data).slice(1))
-		.enter().append('circle')
-			.attr('r', 0)
-		.transition().duration(2000).ease('elastic')
-			.attr('cx', function(d) { return d.x })
-			.attr('cy', function(d) { return d.y })
-			.attr('r', function(d) { return d.r })
-			.style('fill', function(d) { return color[d.color_code] })
+		//APPENDING CIRCLE FOR EACH DATA CHILD
+		svg.selectAll('circle')
+				.data(pack.nodes(data).slice(1))
+			.enter().append('circle')
+				.attr('r', 0)
+			.transition().duration(2000).ease('elastic')
+				.attr('cx', function(d) { return d.x })
+				.attr('cy', function(d) { return d.y })
+				.attr('r', function(d) { return d.r })
+				.style('fill', function(d) { return color[d.color_code] })
 
-	d3.selectAll('circle').on('click', showInfo)
-		// .on('mouseover', hoverTrue)
-		// .on('mouseout', hoverFalse)
-
-
-})//END AJAX
-
-//SHOW TWEET INFO ON CLICK
-function showInfo(d){
-	d3.selectAll('circle').classed('selected', false)
-	d3.select(this).classed('selected', true)
-
-	$('#tweet').html(d.text)
-}
-
-// function hoverTrue(){
-// 	d3.select(this).classed('text-hover', true)
-// }
-
-// function hoverFalse(){
-// 	d3.select(this).classed('text-hover', false)
-// }
+		d3.selectAll('circle').on('click', showInfo)
+			// .on('mouseover', hoverTrue)
+			// .on('mouseout', hoverFalse)
 
 
-//MOUSEOVER MOUSEOUT FUNCTIONS
+	})//END AJAX
 
-d3.select(self.frameElement).style('height', size)
+	//SHOW TWEET INFO ON CLICK
+	function showInfo(d){
+		d3.selectAll('circle').classed('selected', false)
+		d3.select(this).classed('selected', true)
+
+		$('#tweet').html(d.text)
+	}
+
+	// function hoverTrue(){
+	// 	d3.select(this).classed('text-hover', true)
+	// }
+
+	// function hoverFalse(){
+	// 	d3.select(this).classed('text-hover', false)
+	// }
+
+
+	//MOUSEOVER MOUSEOUT FUNCTIONS
+
+	d3.select(self.frameElement).style('height', size)
 
 
 });
