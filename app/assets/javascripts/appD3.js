@@ -1,6 +1,6 @@
 $(function() {
 	
-	// clearInterval(timer)
+	clearInterval(timer)
 	// console.log('timer cleared user')
 
 	var size = 500
