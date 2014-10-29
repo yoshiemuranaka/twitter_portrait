@@ -12,8 +12,16 @@ $(function() {
 		renderD3(data);
 	});
 	
+	$.ajax({
+	url: '/celebs/2/tweets',
+	type: 'GET',
+	dataType: 'json'
+	}).done(function(data){
+		renderD3(data);
+	});
+
 function renderD3(data){
-		var svg = d3.select('div#rooneyPortrait').append('svg')
+		var svg = d3.select('div#portrait'+data.celeb_id).append('svg')
 			.attr('width', size)
 			.attr('height', size)
 
@@ -37,7 +45,8 @@ function renderD3(data){
 		d3.selectAll('circle').on('click', showInfo)
 			.on('mouseover', hoverTrue)
 			.on('mouseout', hoverFalse)
-}
+
+}//END RENDERD3 FUNCTION
 
 	//SHOW TWEET INFO ON CLICK
 	function showInfo(d){
@@ -45,11 +54,11 @@ function renderD3(data){
 		d3.select(this).classed('selected', true)
 		$('#tweet').hide().html(d.text).slideDown()
 		$('#created_at').hide().html(d.tweet_created_at).slideDown()
-		clearInterval(timer)
-		timer = setInterval(function() {
-			circle = shuffleSelectTweet()
-			circle.__onclick()
-		}, 7000);
+		// clearInterval(timer)
+		// timer = setInterval(function() {
+		// 	circle = shuffleSelectTweet()
+		// 	circle.__onclick()
+		// }, 7000);
 
 	}
 
@@ -67,14 +76,14 @@ function renderD3(data){
 		return circle
 	}
 
-	if (timer){
-		// don't do anything if the timer already exists
-	}else{
-			var timer = setInterval(function() {
-			circle = shuffleSelectTweet()
-			circle.__onclick()
-		}, 3000);
-	}
+	// if (timer){
+	// 	// don't do anything if the timer already exists
+	// }else{
+	// 		var timer = setInterval(function() {
+	// 		circle = shuffleSelectTweet()
+	// 		circle.__onclick()
+	// 	}, 3000);
+	// }
 
 	d3.select(self.frameElement).style('height', size)
 

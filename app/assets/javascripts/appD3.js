@@ -14,7 +14,6 @@ $(function() {
 	});
 
 	function renderD3(data){
-
 		var svg=d3.select('div#portrait').append('svg')
 			.attr('width', size)
 			.attr('height', size)
@@ -47,11 +46,11 @@ $(function() {
 		d3.select(this).classed('selected', true)
 		$('#tweet').hide().html(d.text).slideDown()
 		$('#created_at').hide().html(d.tweet_created_at).slideDown()
-		clearInterval(timer)
-		timer = setInterval(function() {
-			circle = shuffleSelectTweet()
-			circle.__onclick()
-		}, 7000);
+		// clearInterval(timer)
+		// timer = setInterval(function() {
+		// 	circle = shuffleSelectTweet()
+		// 	circle.__onclick()
+		// }, 7000);
 
 	}
 

@@ -6,6 +6,7 @@ class CelebTweetsController < ApplicationController
 
 		data={
 			name: 'tweets',
+			celeb_id: params[:id],
 			children: tweets
 		}
 

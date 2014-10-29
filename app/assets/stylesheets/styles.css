@@ -92,14 +92,14 @@ ol.carousel-indicators{
 	margin:0;
 }
 
-.carousel-caption.header{
+/*.carousel-caption.header{
 	padding:0;
 	top: 0;
-}
+}*/
 
 .carousel-caption{
 	padding: 0;
-	bottom:0;
 }
+
 
 
