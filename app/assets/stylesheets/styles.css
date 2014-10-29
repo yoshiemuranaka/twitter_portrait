@@ -1,34 +1,15 @@
-h2{
+h2, h4, p{
 	font-family: Courier;
 	text-align: center;
-}
-
-h4{
-	font-family: Courier;
-	text-align: center;
-	color: black
+	color:black;
 }
 
 body{
 	margin-bottom: 100px;
 }
 
-div#userSettings{
-/*	position: absolute;
-	top:0;
-	right:0;
-	width: 30%;
-	padding-top:20px;*/
-}
-
-div#header{
-	margin-bottom: 30px;
-}
-
-p{
-	font-family: Courier;
-	text-align: center;
-	color:black;
+div.content{
+	margin-top:50px;
 }
 
 form{
@@ -88,11 +69,6 @@ a:hover{
 .carousel-indicators .active{
 	background-color: hotpink;
 	opacity: 100
-}
-
-.carousel{
-	margin-top:50px;
-	margin-bottom: 0
 }
 
 ol.carousel-indicators{

@@ -17,15 +17,17 @@
 <% if @password_length_error %>
 	<p class='error'>password is too short. min 6 characters</p>
 <% end %>
-
+<div class='content'>
 <p>Register:</p>
 <form action='/account' method='POST'>
-	<input name='fname' placeholder='first name'>
-	<input name='lname' placeholder='last name'>
-	<input name='handle' placeholder='@twitter_handle'>
-	<input name='email' placeholder='email'>
-	<input name='password' type='password' placeholder='password'>
-	<input name='password_confirm' type='password' placeholder='password'>
-	<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+	<div class='row'><input name='fname' placeholder='first name'></row>
+	<div class='row'><input name='lname' placeholder='last name'></div>
+	<div class='row'><input name='handle' placeholder='@twitter_handle'></div>
+	<div class='row'><input name='email' placeholder='email'></div>
+	<div class='row'><input name='password' type='password' placeholder='password'></div>
+	<div class='row'><input name='password_confirm' type='password' placeholder='password'></div>
+	<div class='row'><input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden"></div>
 	<button>Create</button>
 </form>
+
+</div>
