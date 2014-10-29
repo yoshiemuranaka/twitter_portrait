@@ -37,6 +37,11 @@ button{
 	font-family: courier;
 }
 
+#header{
+	margin:50px;
+}
+
+
 p#tweet{
 	padding: 0 80px;
 }
