@@ -20,6 +20,14 @@ $(function() {
 		renderD3(data);
 	});
 
+	$.ajax({
+	url: '/celebs/3/tweets',
+	type: 'GET',
+	dataType: 'json'
+	}).done(function(data){
+		renderD3(data);
+	});
+
 function renderD3(data){
 		var svg = d3.select('div#portrait'+data.celeb_id).append('svg')
 			.attr('width', size)
