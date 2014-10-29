@@ -9,6 +9,9 @@ h4{
 	color: black
 }
 
+body{
+	margin-bottom: 100px;
+}
 
 div#userSettings{
 	position: absolute;
@@ -78,7 +81,7 @@ a:hover{
 }
 
 .carousel-indicators .active{
-	background-color: black;
+	background-color: hotpink;
 	opacity: 100
 }
 

@@ -43,13 +43,14 @@ function renderD3(data){
 	function showInfo(d){
 		d3.selectAll('circle').classed('selected', false)
 		d3.select(this).classed('selected', true)
-		$('#tweet').html(d.text)
-		$('#created_at').html(d.tweet_created_at)
+		$('#tweet').hide().html(d.text).slideDown()
+		$('#created_at').hide().html(d.tweet_created_at).slideDown()
 		clearInterval(timer)
 		timer = setInterval(function() {
 			circle = shuffleSelectTweet()
 			circle.__onclick()
-		}, 5000);
+		}, 7000);
+
 	}
 
 	function hoverTrue(){
@@ -69,7 +70,7 @@ function renderD3(data){
 	var timer = setInterval(function() {
 		circle = shuffleSelectTweet()
 		circle.__onclick()
-	}, 5000);
+	}, 3000);
 
 
 	d3.select(self.frameElement).style('height', size)
