@@ -35,9 +35,9 @@ $(function() {
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		d3.selectAll('circle').on('click', showInfo)
-			.on('mouseover', hoverTrue)
-			.on('mouseout', hoverFalse)
+		// d3.selectAll('circle').on('click', showInfo)
+		// 	.on('mouseover', hoverTrue)
+		// 	.on('mouseout', hoverFalse)
 
 	};
 

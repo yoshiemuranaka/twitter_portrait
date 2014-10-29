@@ -42,24 +42,22 @@ function renderD3(data){
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		d3.selectAll('circle').on('click', showInfo)
+		d3.selectAll('circle').on('click', showCelebInfo)
 			.on('mouseover', hoverTrue)
 			.on('mouseout', hoverFalse)
 
 }//END RENDERD3 FUNCTION
 
 	//SHOW TWEET INFO ON CLICK
-	function showInfo(d){
+	function showCelebInfo(d){
 		d3.selectAll('circle').classed('selected', false)
 		d3.select(this).classed('selected', true)
-		$('#tweet').hide().html(d.text).slideDown()
-		$('#created_at').hide().html(d.tweet_created_at).slideDown()
-		// clearInterval(timer)
-		// timer = setInterval(function() {
-		// 	circle = shuffleSelectTweet()
-		// 	circle.__onclick()
-		// }, 7000);
-
+		var caption = $('.active').children()[1]
+	
+		$('.active').children('.carousel-caption').children('p').each(function(){
+			$(this).hide().html(d.text).slideDown()
+		})
+	
 	}
 
 	function hoverTrue(){
