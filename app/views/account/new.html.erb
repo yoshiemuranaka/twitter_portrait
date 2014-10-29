@@ -20,14 +20,14 @@
 <div class='content'>
 <p>Register:</p>
 <form action='/account' method='POST'>
-	<div class='row'><input name='fname' placeholder='first name'></row>
-	<div class='row'><input name='lname' placeholder='last name'></div>
-	<div class='row'><input name='handle' placeholder='@twitter_handle'></div>
-	<div class='row'><input name='email' placeholder='email'></div>
-	<div class='row'><input name='password' type='password' placeholder='password'></div>
-	<div class='row'><input name='password_confirm' type='password' placeholder='password'></div>
+	<div class='row'><label>First Name:</label><input name='fname' placeholder='first name'></row>
+	<div class='row'><label>Last Name:</label><input name='lname' placeholder='last name'></div>
+	<div class='row'><label>Twitter Handle:</label><input name='handle' placeholder='@twitter_handle'></div>
+	<div class='row'><label>Email:</label><input name='email' placeholder='email'></div>
+	<div class='row'><label>Password:</label><input name='password' type='password' placeholder='password'></div>
+	<div class='row'><label>Confirm Password:</label><input name='password_confirm' type='password' placeholder='password'></div>
 	<div class='row'><input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden"></div>
-	<button>Create</button>
+	<button>create</button>
 </form>
 
 </div>

@@ -11,44 +11,47 @@
 	<div class='row'>
 		<div class='col-md-3'>
 			<div id='header'><a href='/'><h2>Twitter Portrait</h2></a></div>
-			<div id='userSettings'>
 			
-			<!-- PASSWORD/EMAIL ERROR -->
-			<% if @error %>
-				<p class='error'>Invalid email/password</p>
-			<% end %>
+				<div id='userSettings'>
+				
+					<!-- PASSWORD/EMAIL ERROR -->
+					<% if @error %>
+						<p class='error'>Invalid email/password</p>
+					<% end %>
 
-			<!-- IF LOGGED IN  -->
-			<% if session[:user_id] %>
-			<% user=User.find(session[:user_id]) %>
-				<p>hello <%= user.fname %>.</p>
-				<a href='/account'><p>your portrait</p></a>
-				<!-- <span id='logout'><p>logout</p></span> -->
-				<form method="POST" action="/session">
-		      <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-		      <input name="_method" value="DELETE" type="hidden">
-		      <button>logout</button>
-		    </form>
+					<!-- IF LOGGED IN  -->
+					<% if session[:user_id] %>
+					<% user=User.find(session[:user_id]) %>
+						<p>hello <%= user.fname %>.</p>
+						<a href='/account'><p>your portrait</p></a>
+						<!-- <span id='logout'><p>logout</p></span> -->
+						<form method="POST" action="/session">
+				      <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+				      <input name="_method" value="DELETE" type="hidden">
+				      <button>logout</button>
+				    </form>
 
-			<!-- IF NOT LOGGED IN -->
-			<% else %>
-				<form action='/session' method='POST'>
-					<div class='row'><input name='email' placeholder='email'></div>
-					<div class='row'><input name='password' type='password' placeholder='password'></div>
-					<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-					<button>Login</button>
-				</form>
-				<a href='/account/new'><p>Create Account</p></a>
-			
-			<% end %>
-	    
-	    </div>
+					<!-- IF NOT LOGGED IN -->
+					<% else %>
+						<form action='/session' method='POST'>
+							<div class='row'><input name='email' placeholder='email'></div>
+							<div class='row'><input name='password' type='password' placeholder='password'></div>
+							<input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+							<button>login</button>
+						</form>
+						<a href='/account/new'><p>create account</p></a>
+					
+					<% end %>
+		    
+		    </div> <!-- END USER SETTINGS -->
 		
-		</div>
+		</div> <!-- END COL-MD-3 -->
+		
 		<div class='col-md-9'>
 			<%= yield %>
 		</div>
-	</div>
+	
+	</div> <!--END CONTAINER -->
 </div>
 </body>
 </html>

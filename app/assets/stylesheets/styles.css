@@ -16,6 +16,17 @@ form{
 	text-align: center;
 }
 
+label{
+	width:20%;
+	text-align: right;
+	font-family: courier
+}
+
+input{
+	margin:5px;
+	font-family: arial
+}
+
 a{
 	text-decoration: none;
 	color: black
@@ -39,6 +50,7 @@ button{
 
 #header{
 	margin:50px;
+	text-align: center;
 }
 
 
