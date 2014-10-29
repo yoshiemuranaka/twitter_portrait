@@ -13,7 +13,7 @@ div.content{
 }
 
 div.regForm{
-	margin-top: 50px;
+	padding-top: 50px;
 }
 
 form{
@@ -101,6 +101,7 @@ ol.carousel-indicators{
 }
 .carousel-caption{
 	padding: 0;
+	bottom:0;
 	background:rgba(255,255,255,0.6);
 }
 
