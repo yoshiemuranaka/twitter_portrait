@@ -1,6 +1,6 @@
 $(function() {
 
-	var size = 400
+	var size = 500
 
 	var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
 
@@ -36,31 +36,7 @@ $(function() {
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		// d3.selectAll('circle').on('click', showInfo)
-		// 	.on('mouseover', hoverTrue)
-		// 	.on('mouseout', hoverFalse)
 	};
-
-	//MOUSEOVER MOUSEOUT FUNCTIONS
-	// function hoverTrue(){
-	// 	d3.select(this).classed('text-hover', true)
-	// }
-
-	// function hoverFalse(){
-	// 	d3.select(this).classed('text-hover', false)
-	// }
-
-	// function shuffleSelectTweet(){
-	// 	circles = d3.selectAll('circle')[0]
-	// 	circle = d3.shuffle(circles)[0]
-	// 	return circle
-	// }
-
-	// //INTERVAL SELECTION OF TWEETS
-	// var timer = setInterval(function() {
-	// 	circle = shuffleSelectTweet()
-	// 	circle.__onclick()
-	// }, 5000);
 
 
 	d3.select(self.frameElement).style('height', size)

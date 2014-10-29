@@ -19,7 +19,7 @@
 //= require d3.min
 //= require appD3
 //= require celebD3
-// require appJQuery
+//= require appJQuery
 
 
 
