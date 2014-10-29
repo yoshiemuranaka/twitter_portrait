@@ -1,6 +1,7 @@
 $(function() {
 	
-	// clearInterval(timer)
+	clearInterval(timer)
+	var timer = false;
 
 	var size = 500
 
@@ -68,8 +69,6 @@ function renderD3(data){
 		circle = d3.shuffle(circles)[0]
 		return circle
 	}
-
-var timer = false;
 
 if (timer == false){
 	var timer = setInterval(function() {
