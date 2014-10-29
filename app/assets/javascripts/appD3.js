@@ -69,6 +69,15 @@ $(function() {
 		return circle
 	}
 
+	if (timer){
+		// don't do anything if the timer already exists
+	}else{
+			var timer = setInterval(function() {
+			circle = shuffleSelectTweet()
+			circle.__onclick()
+		}, 3000);
+	}
+
 	d3.select(self.frameElement).style('height', size)
 
 });
