@@ -29,15 +29,17 @@ $(function() {
 				.data(pack.nodes(data).slice(1))
 			.enter().append('circle')
 				.attr('r', 0)
-			.transition().duration(2000).ease('elastic')
+			.transition().duration(3000).ease('elastic')
 				.attr('cx', function(d) { return d.x })
 				.attr('cy', function(d) { return d.y })
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		// d3.selectAll('circle').on('click', showInfo)
-		// 	.on('mouseover', hoverTrue)
-		// 	.on('mouseout', hoverFalse)
+		if(this.location.pathname == '/account'){
+			d3.selectAll('circle').on('click', showInfo)
+			.on('mouseover', hoverTrue)
+			.on('mouseout', hoverFalse)
+		}
 
 	};
 
@@ -46,12 +48,6 @@ $(function() {
 		d3.select(this).classed('selected', true)
 		$('#tweet').hide().html(d.text).slideDown()
 		$('#created_at').hide().html(d.tweet_created_at).slideDown()
-		// clearInterval(timer)
-		// timer = setInterval(function() {
-		// 	circle = shuffleSelectTweet()
-		// 	circle.__onclick()
-		// }, 7000);
-
 	}
 
 	function hoverTrue(){
@@ -62,11 +58,11 @@ $(function() {
 		d3.select(this).classed('text-hover', false)
 	}
 
-	function shuffleSelectTweet(){
-		circles = d3.selectAll('circle')[0]
-		circle = d3.shuffle(circles)[0]
-		return circle
-	}
+	// function shuffleSelectTweet(){
+	// 	circles = d3.selectAll('circle')[0]
+	// 	circle = d3.shuffle(circles)[0]
+	// 	return circle
+	// }
 
 	d3.select(self.frameElement).style('height', size)
 

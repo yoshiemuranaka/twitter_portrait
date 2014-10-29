@@ -36,17 +36,21 @@ function renderD3(data){
 				.data(pack.nodes(data).slice(1))
 			.enter().append('circle')
 				.attr('r', 0)
-			.transition().duration(2000).ease('elastic')
+			.transition().duration(3000).ease('elastic')
 				.attr('cx', function(d) { return d.x })
 				.attr('cy', function(d) { return d.y })
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		d3.selectAll('circle').on('click', showCelebInfo)
+		if(this.location.pathname == '/'){
+			d3.selectAll('circle').on('click', showCelebInfo)
 			.on('mouseover', hoverTrue)
 			.on('mouseout', hoverFalse)
+		}
 
 }//END RENDERD3 FUNCTION
+
+
 
 	//SHOW TWEET INFO ON CLICK
 	function showCelebInfo(d){
@@ -68,11 +72,11 @@ function renderD3(data){
 		d3.select(this).classed('text-hover', false)
 	}
 
-	function shuffleSelectTweet(){
-		circles = d3.selectAll('circle')[0]
-		circle = d3.shuffle(circles)[0]
-		return circle
-	}
+	// function shuffleSelectTweet(){
+	// 	circles = d3.selectAll('circle')[0]
+	// 	circle = d3.shuffle(circles)[0]
+	// 	return circle
+	// }
 
 	// if (timer){
 	// 	// don't do anything if the timer already exists
