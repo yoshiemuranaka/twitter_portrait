@@ -1,9 +1,9 @@
 $(function() {
 	
-	var timer = false;
-	console.log('timer false celeb')
-	clearInterval(timer)
-	console.log('timer cleared celeb')
+	// // var timer = false;
+	// console.log('timer false celeb')
+	// // clearInterval(timer)
+	// console.log('timer cleared celeb')
 
 
 	var size = 500
