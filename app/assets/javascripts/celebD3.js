@@ -1,8 +1,5 @@
 $(function() {
 
-	clearInterval(timer)
-	console.log('cleared timer interval celeb')
-
 	var size = 500
 
 	var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "#FF9966", "#FFA255", "#FFAA44", "#FFB333", "#FFBB22", "#FFC411", "#FFCC00", "#EEBB11", "#DDAA22", "#CC9933", "#BB8844", "#AA7755", "#996666", "#80555E", "#664455", "#4D334D", "#332244", "#1A113C"]
@@ -70,10 +67,16 @@ function renderD3(data){
 		return circle
 	}
 
-	var timer = setInterval(function() {
+	if (timer){
+		
+	}else{
+			var timer = setInterval(function() {
 			circle = shuffleSelectTweet()
 			circle.__onclick()
 		}, 3000);
+	}
+
+
 
 	d3.select(self.frameElement).style('height', size)
 
