@@ -1,7 +1,7 @@
 $(function() {
 	
 	clearInterval(timer)
-	var timer = false;
+	console.log('timer cleared')
 
 	var size = 500
 
