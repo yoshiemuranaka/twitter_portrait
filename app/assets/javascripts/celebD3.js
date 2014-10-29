@@ -50,7 +50,7 @@ function renderD3(data){
 				.attr('r', function(d) { return d.r })
 				.style('fill', function(d) { return color[d.color_code] })
 
-		if(this.location.pathname == '/'){
+		if(this.location.pathname == '/' || this.location.pathname == '/session'){
 			d3.selectAll('circle').on('click', showCelebInfo)
 			.on('mouseover', hoverTrue)
 			.on('mouseout', hoverFalse)
