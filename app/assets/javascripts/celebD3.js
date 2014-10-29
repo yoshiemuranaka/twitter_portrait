@@ -67,11 +67,18 @@ function renderD3(data){
 		return circle
 	}
 
+if (timer){
+	clearInterval(timer)
 	var timer = setInterval(function() {
 		circle = shuffleSelectTweet()
 		circle.__onclick()
 	}, 3000);
-
+}else{
+	var timer = setInterval(function() {
+		circle = shuffleSelectTweet()
+		circle.__onclick()
+	}, 3000);
+}
 
 	d3.select(self.frameElement).style('height', size)
 
