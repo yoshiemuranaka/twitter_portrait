@@ -1,6 +1,6 @@
 $(function() {
 	
-	clearInterval(timer)
+	// clearInterval(timer)
 
 	var size = 500
 
@@ -69,11 +69,14 @@ function renderD3(data){
 		return circle
 	}
 
+var timer = false;
 
+if (timer == false){
 	var timer = setInterval(function() {
 		circle = shuffleSelectTweet()
 		circle.__onclick()
 	}, 3000);
+}
 
 
 	d3.select(self.frameElement).style('height', size)
