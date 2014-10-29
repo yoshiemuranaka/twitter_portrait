@@ -9,7 +9,11 @@ body{
 }
 
 div.content{
-	margin-top:50px;
+	margin-top:20px;
+}
+
+div.regForm{
+	margin-top: 50px;
 }
 
 form{
@@ -34,7 +38,7 @@ a{
 
 svg{
 	display: block;
-	margin: auto;
+	margin: 0 auto;
 
 }
 
@@ -92,13 +96,12 @@ ol.carousel-indicators{
 	margin:0;
 }
 
-/*.carousel-caption.header{
-	padding:0;
-	top: 0;
-}*/
-
+.carousel{
+	margin-top: 50px;
+}
 .carousel-caption{
 	padding: 0;
+	background:rgba(255,255,255,0.6);
 }
 
 
