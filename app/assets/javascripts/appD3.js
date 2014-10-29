@@ -68,12 +68,7 @@ $(function() {
 		circle = d3.shuffle(circles)[0]
 		return circle
 	}
-
-	var timer = setInterval(function() {
-		circle = shuffleSelectTweet()
-		circle.__onclick()
-	}, 3000);
-
+	
 	d3.select(self.frameElement).style('height', size)
 
 });
