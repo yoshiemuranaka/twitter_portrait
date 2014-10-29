@@ -1,6 +1,7 @@
 $(function() {
 
 	clearInterval(timer)
+	console.log('cleared timer interval celeb')
 
 	var size = 500
 
@@ -69,14 +70,10 @@ function renderD3(data){
 		return circle
 	}
 
-	if (timer == nil){
-		console.log('setting interval Timer celeb')	
-		clearInterval(timer)
-		timer = setInterval(function() {
+	var timer = setInterval(function() {
 			circle = shuffleSelectTweet()
 			circle.__onclick()
 		}, 3000);
-	}
 
 	d3.select(self.frameElement).style('height', size)
 
