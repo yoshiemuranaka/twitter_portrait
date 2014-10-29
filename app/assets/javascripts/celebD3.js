@@ -1,10 +1,6 @@
 $(function() {
-	
-	// // var timer = false;
-	// console.log('timer false celeb')
-	// // clearInterval(timer)
-	// console.log('timer cleared celeb')
 
+	clearInterval(timer)
 
 	var size = 500
 
@@ -73,9 +69,10 @@ function renderD3(data){
 		return circle
 	}
 
-	if (timer == false){
-		console.log('setting interval Timer celeb')
-		var timer = setInterval(function() {
+	if (timer == nil){
+		console.log('setting interval Timer celeb')	
+		clearInterval(timer)
+		timer = setInterval(function() {
 			circle = shuffleSelectTweet()
 			circle.__onclick()
 		}, 3000);
