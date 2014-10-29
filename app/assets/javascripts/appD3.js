@@ -1,4 +1,8 @@
 $(function() {
+
+	if (timer){
+		clearInterval(timer)
+	}
 	
 	var size = 500
 
