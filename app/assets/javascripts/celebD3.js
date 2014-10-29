@@ -43,10 +43,13 @@ function renderD3(data){
 	function showInfo(d){
 		d3.selectAll('circle').classed('selected', false)
 		d3.select(this).classed('selected', true)
-
 		$('#tweet').html(d.text)
 		$('#created_at').html(d.tweet_created_at)
-
+		clearInterval(timer)
+		timer = setInterval(function() {
+			circle = shuffleSelectTweet()
+			circle.__onclick()
+		}, 5000);
 	}
 
 	function hoverTrue(){
@@ -63,11 +66,11 @@ function renderD3(data){
 		return circle
 	}
 
-	//INTERVAL SELECTION OF TWEETS
 	var timer = setInterval(function() {
 		circle = shuffleSelectTweet()
 		circle.__onclick()
 	}, 5000);
+
 
 	d3.select(self.frameElement).style('height', size)
 
