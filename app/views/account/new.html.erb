@@ -1,3 +1,4 @@
+<div class='content'>
 <% if @password_error %>
 	<p class='error'>passwords don't match</p>
 <% end %>
@@ -17,7 +18,7 @@
 <% if @password_length_error %>
 	<p class='error'>password is too short. min 6 characters</p>
 <% end %>
-<div class='content'>
+
 <p>Register:</p>
 <form action='/account' method='POST'>
 	<div class='row'><label>First Name:</label><input name='fname' placeholder='first name'></row>
