@@ -16,7 +16,18 @@ var color = ["#000033", "#2B1A3C", "#553344", "#804D4D", "#AA6655", "#D5805E", "
 			.style('fill', function(d) {return d})
 
 $('#viewKey').on('click', function(){
-	$('#userKey').toggleClass('hidden')
+	var userKey = $('#userKey')
+	if (userKey.hasClass('hidden')){
+		userKey.hide()
+		userKey.toggleClass('hidden')
+		userKey.slideDown('slow')
+	}else{
+		userKey.slideUp('slow', function(){
+			userKey.addClass('hidden');
+			userKey.show()
+		})
+	}
+	
 })
 			
 });
