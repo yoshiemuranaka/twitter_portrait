@@ -48,6 +48,11 @@ $(function() {
 		d3.select(this).classed('selected', true)
 		$('#tweet').hide().html(d.text).slideDown()
 		$('#created_at').hide().html(d.tweet_created_at).slideDown()
+		
+		// setInterval(function() {
+		// 	circle = shuffleSelectTweet()
+		// 	circle.__onclick()
+		// }, 7000);
 	}
 
 	function hoverTrue(){
@@ -57,12 +62,6 @@ $(function() {
 	function hoverFalse(){
 		d3.select(this).classed('text-hover', false)
 	}
-
-	// function shuffleSelectTweet(){
-	// 	circles = d3.selectAll('circle')[0]
-	// 	circle = d3.shuffle(circles)[0]
-	// 	return circle
-	// }
 
 	d3.select(self.frameElement).style('height', size)
 

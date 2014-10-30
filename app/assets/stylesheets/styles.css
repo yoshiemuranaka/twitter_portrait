@@ -62,6 +62,14 @@ p#tweet{
 	padding: 0 80px;
 }
 
+div#userKey{
+	box-shadow: 5px 5px 5px #888888;
+}
+
+.hidden{
+	display:none;
+}
+
 .text-hover{
 	opacity: .5
 }

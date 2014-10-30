@@ -42,14 +42,30 @@
 						<a href='/account/new'><p>create account</p></a>
 					
 					<% end %>
+		  <br>
+				<p id='viewKey' style='color:hotpink'><strong>KEY</strong></p>
+		  <div id='userKey' class='hidden'>
+			  <div id='key'></div>
+				 
+				<div class='row'>
+					<p class='col-sm-4'>00:00</p><p class='col-sm-4'>12:00</p><p class='col-sm-4'>23:00</p>
+				</div>
+			
+				<p>@ ++</p>
+				<p># +++</p>
+				<p>http ++++</p>
+			 </div>
 		    
 		    </div> <!-- END USER SETTINGS -->
-		
+			
 		</div> <!-- END COL-MD-3 -->
 		
 		<div class='col-md-9'>
 			<%= yield %>
 		</div>
+
+
+
 	
 	</div> <!--END CONTAINER -->
 </div>
