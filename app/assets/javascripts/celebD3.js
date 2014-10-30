@@ -80,6 +80,7 @@ function renderD3(data){
 		d3.select(this).classed('text-hover', false)
 	}
 
+
 	// function shuffleSelectTweet(){
 	// 	circles = d3.selectAll('circle')[0]
 	// 	circle = d3.shuffle(circles)[0]
