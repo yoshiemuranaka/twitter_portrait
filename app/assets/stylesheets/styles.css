@@ -70,6 +70,8 @@ p#tweet{
 
 div#userKey{
 	box-shadow: 5px 5px 5px #888888;
+	width: 260px;
+	margin: auto;
 }
 
 .hidden{
