@@ -5,5 +5,5 @@ D3js, Ruby, PostgreSQL
 
 Visualize your Twitter activity with a unique personal portrait. 
 
-twitterportrait.herokuapp.com
+[Twitter Portrait](twitterportrait.herokuapp.com)
 
