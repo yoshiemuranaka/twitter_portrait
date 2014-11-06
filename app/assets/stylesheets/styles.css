@@ -58,11 +58,18 @@ button{
 	font-family: 'Roboto Condensed', sans-serif;
 }
 
+button:hover{
+	color: hotpink;
+}
+
 #header{
 	margin:50px;
 	text-align: center;
 }
 
+#userSettings a p:hover{
+	color: hotpink;
+}
 
 p#tweet{
 	padding: 0 80px;
@@ -72,6 +79,10 @@ div#userKey{
 	box-shadow: 5px 5px 5px #888888;
 	width: 260px;
 	margin: auto;
+}
+
+p#viewKey{
+	cursor: pointer;
 }
 
 .hidden{
