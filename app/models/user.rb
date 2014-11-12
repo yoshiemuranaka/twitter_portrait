@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
 	validates :fname, :lname, :email, :handle, presence: true
 	validates :email, uniqueness: true
 	validates :handle, uniqueness: true
-	validates :password, length: { in: 6..25 }
+	# validates :password, length: { in: 6..25 }
 end
